@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">Student Helpdesk</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="preview.html">Preview Queries</a>
+</div>
+
+</div>
+
+<div class="table-container">
+
+<h2>Admin Panel</h2>
+
+<table id="adminTable">
+<tr>
+<th>Name</th>
+<th>ID</th>
+<th>Issue</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</table>
+
+<tr>
+<th>Student ID</th>
+<th>Issue</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td>Exam Hall Ticket</td>
+<td class="pending">Pending</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="footer">
+<p>Student Online Helpdesk System</p>
+</div>
+
+<script>
+async function loadData(){
+  let res = await fetch("http://localhost:5000/queries");
+  let data = await res.json();
+
+  let table = document.getElementById("adminTable");
+
+  data.forEach(q => {
+    let row = table.insertRow();
+
+    row.innerHTML = `
+      <td>${q.name}</td>
+      <td>${q.studentId}</td>
+      <td>${q.issueType}</td>
+      <td>${q.status}</td>
+      <td>
+        <button onclick="updateStatus('${q._id}','Solved')">Solve</button>
+      </td>
+    `;
+  });
+}
+
+async function updateStatus(id, status){
+  await fetch(`http://localhost:5000/update/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ status })
+  });
+
+  location.reload();
+}
+
+loadData();
+</script>
+</body>
+</html>

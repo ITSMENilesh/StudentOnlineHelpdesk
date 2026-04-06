@@ -1,0 +1,92 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Submit Query - Student Helpdesk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+<h2>Student Helpdesk</h2>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="login.html">Login</a>
+<a href="submit_query.html">Submit Query</a>
+<a href="admin.html">Admin</a>
+</div>
+</div>
+
+
+<!-- Query Form Section -->
+<div class="query-container">
+
+<div class="query-box">
+
+<h2>Submit Your Query</h2>
+
+<form onsubmit="submitQuery(event)">
+
+<label>Student Name</label>
+<input type="text" placeholder="Enter your name">
+
+<label>Student ID</label>
+<input type="text" placeholder="Enter your ID">
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email">
+
+<label>Issue Type</label>
+<select>
+<option>Fees Issue</option>
+<option>Exam Issue</option>
+<option>Technical Issue</option>
+<option>Attendance Issue</option>
+<option>Other</option>
+</select>
+
+<label>Describe Your Problem</label>
+<textarea rows="5" placeholder="Explain your issue here..."></textarea>
+
+<button type="submit">Submit Query</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+<p>Student Online Helpdesk System</p>
+<p>Name: Nilesh Khanjode | ID: VU4F2425101</p>
+</div>
+<script>
+async function submitQuery(e){
+  e.preventDefault();
+
+  const data = {
+    name: document.querySelector('input[placeholder="Enter your name"]').value,
+    studentId: document.querySelector('input[placeholder="Enter your ID"]').value,
+    email: document.querySelector('input[type="email"]').value,
+    issueType: document.querySelector('select').value,
+    description: document.querySelector('textarea').value
+  };
+
+  await fetch("http://localhost:5000/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  alert("Query Submitted!");
+}
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,329 @@
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f6fb;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#173a75;
+padding:18px 60px;
+color:white;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+.nav-links a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+height:520px;
+display:flex;
+align-items:center;
+padding-left:80px;
+
+background:
+linear-gradient(90deg,#1e4f91 35%, rgba(30,79,145,0.8) 60%, rgba(30,79,145,0.2) 80%),
+url("images/helpdesk-bg.png");
+
+background-size:cover;
+background-position:right center;
+background-repeat:no-repeat;
+
+color:white;
+}
+
+.hero-content{
+max-width:520px;
+}
+
+.hero-content h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+line-height:1.6;
+}
+
+.hero-buttons{
+margin-top:20px;
+}
+
+.btn-yellow{
+background:#ffd400;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+margin-right:10px;
+}
+
+.btn-white{
+background:white;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+color:#1e4f91;
+font-weight:bold;
+}
+
+
+/* BUTTONS */
+
+.btn-yellow{
+background:#ffd400;
+color:black;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin-right:12px;
+}
+
+.btn-white{
+background:white;
+color:#173a75;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+/* FEATURES */
+
+.features{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:60px;
+background:#f4f6fb;
+}
+
+.card{
+background:white;
+width:250px;
+padding:25px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+
+/* HOW IT WORKS */
+
+.how{
+text-align:center;
+padding:50px;
+}
+
+.steps{
+display:flex;
+justify-content:center;
+gap:35px;
+margin-top:30px;
+}
+
+.step{
+background:white;
+padding:20px;
+width:180px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.circle{
+background:#2e6bd1;
+color:white;
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#173a75;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+
+.icon{
+font-size:28px;
+color:#2e6bd1;
+margin-bottom:10px;
+}
+
+.step-icon{
+font-size:30px;
+color:#2e6bd1;
+margin:10px 0;
+}
+
+/* ========================= */
+/* QUERY FORM PAGE */
+/* ========================= */
+
+.query-container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px;
+}
+
+.query-box{
+background:white;
+width:450px;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.query-box h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.query-box label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
+
+.query-box input,
+.query-box select,
+.query-box textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.query-box button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#2e6bd1;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+/* ========================= */
+/* TABLE PAGE */
+/* ========================= */
+
+.table-container{
+padding:60px;
+text-align:center;
+}
+
+.table-container table{
+margin:auto;
+border-collapse:collapse;
+width:70%;
+background:white;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+table th,
+table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+table th{
+background:#173a75;
+color:white;
+}
+
+.pending{
+color:orange;
+font-weight:bold;
+}
+
+.solved{
+color:green;
+font-weight:bold;
+}
+
+/* ========================= */
+/* LOGIN PAGE */
+/* ========================= */
+
+.container{
+display:flex;
+height:100vh;
+}
+
+.left{
+flex:1;
+background:#173a75;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f4f6fb;
+}
+
+.login-box{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+width:300px;
+}
+
+.login-box input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.login-box button{
+margin-top:20px;
+width:100%;
+padding:10px;
+background:#2e6bd1;
+color:white;
+border:none;
+border-radius:5px;
+}
